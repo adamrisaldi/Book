@@ -1,0 +1,48 @@
+<%- include("partials/header.ejs") %>
+
+<section id="isi-notes" class="isi-notes">
+    <div class="row">
+        <div class="note-form">
+            <form action="/note/:id" method="POST">
+                <input type="hidden" name="newIdBook" value="<%= book.id %>">
+                <input type="hidden" name="newCoverbuku" value="<%= book.formats['image/jpeg'] %>">
+                
+                <label for="judul">Judul Buku:</label><br>
+                <input class="judul" id="judul" name="newJudul" cols="70" value="<%= book.title %>"><br><br>
+                
+                <label for="time">Tanggal Baca: </label>
+                <input name="newTime" type="date" /><br><br>
+
+                <label for="">Rating Buku: </label>
+                <select name="newRating" id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <label for="">/10</label><br><br>
+
+                <label for="note">Isi Note:</label><br>
+                <textarea id="note" name="newNote" rows="10" cols="70"></textarea><br><br>
+            
+                <input class="submit" type="submit" value="Simpan">
+            </form>
+        </div>
+        <!-- <div class="note">
+            <h3>
+                review book: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam doloremque quae expedita dolores sit fugiat soluta sunt animi!
+                Sint beatae iusto tempore placeat officia suscipit accusantium architecto
+                tempora qui reprehenderit?
+            </h3>
+        </div> -->
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

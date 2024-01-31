@@ -1,0 +1,44 @@
+    <!-- footer -->
+    <!-- <footer>
+        <div class="socials">
+            <a href="#"><i data-feather="instagram"></i></a>
+        </div> -->
+        <!-- <div class="links">
+            <a href="#home">home</a>
+            <a href="#profile">profile</a>
+            <a href="#menu">menu</a>
+            <a href="#contact">contact</a>
+        </div> -->
+        <!-- <div class="credit">
+            <p>Created by <a href="">Adam Risaldi</a>. | &copy; 2024.</p>
+        </div>
+    </footer> -->
+    <!-- footer -->
+
+    <!-- feather icons -->   
+    <script>
+        feather.replace()
+    </script>
+
+    <!-- my javascript -->
+    <script>
+        // toggle class active
+        const navbarNav = document.querySelector('.navbar-nav');
+
+        // ketika humburger menu diklik
+        document.querySelector('#hamburger-menu').onclick = () => {
+            navbarNav.classList.toggle('active');
+        };
+
+        // klik diluar sidebar untuk hilangkan nav
+        const hamburger = document.querySelector('#hamburger-menu');
+
+        document.addEventListener('click', function(e) {
+            if(!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+                navbarNav.classList.remove('active');
+            }
+        });
+    </script> 
+</body>
+
+</html>

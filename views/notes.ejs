@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<section id="notes" class="notes">
+    <h2><span>Notes</span></h2>
+    <% for(let note of listNote) { %>
+    <div>
+        <img src="<%= note.cover_buku %>" alt="<%= note.judul %>"><br>
+        <p>Judul Buku: <%= note.judul %></p>
+        <p>Rating buku: <%= note.rating %>/10</p>
+        <p>Tanggal Baca: <%= note.date %></p>
+        <p>Notes: <%= note.isi_note %></p>
+        <button onclick="location.href='/note/<%= note.id %>/edit'">Edit</button>
+        <form action="/note/<%= note.id %>/delete" method="post">
+            <button name="deleteNote" onclick="">Hapus</button>
+        </form><br><br>
+    </div>
+    <% }; %>
+</section id="notes" class="notes">
+
+
+
+<%- include("partials/footer.ejs") %>

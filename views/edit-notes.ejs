@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<section id="isi-notes" class="isi-notes">
+    <div class="row">
+        <div class="note-form">
+            <% for(let note of listNote) { %>
+            <form action="/note/<%= note.id %>/edit" method="POST">
+                <input type="hidden" name="updatedIdBook" value="<%= note.id_book %>">
+                <input type="hidden" name="updateCoverbuku" value="<%= note.cover_buku %>">
+                
+                <label for="judul">Judul Buku:</label><br>
+                <input class="judul" id="judul" name="updateJudul" cols="70" value="<%= note.judul %>"><br><br>
+                
+                <label for="time">Tanggal Baca: </label>
+                <input name="updateTime" type="date" /><br><br>
+
+                <label for="">Rating Buku: </label>
+                <select name="updateRating" id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <label for="">/10</label><br><br>
+
+                <label for="note">Isi Note:</label><br>
+                <textarea id="note" name="updateNote" rows="10" cols="70"><%= note.isi_note %></textarea><br><br>
+            
+                <input class="edit" type="submit" value="Update">
+            </form>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %>
